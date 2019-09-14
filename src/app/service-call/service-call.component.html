@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center">Engineer.ai Angular Assignment</h1>
+        </div>
+        <div class="col-md-12 mt-5">
+            <form>
+                <div class="form-group form-inline">
+                    Title search: <input class="form-control ml-2" (keyup)='search($event.target.value)' type="text" />
+                </div>
+            </form>
+            <table class="table table-bordered table-hover table-responsive">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Url</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Author</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of filterData; let i=index;" (click)="openJsonModel(content, a)">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{a.title}}</td>
+                        <td>{{a.url}}</td>
+                        <td>{{a.created_at | date}} </td>
+                        <td>{{a.author}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12">
+            <p>Author - Vaibhav Yadav</p>
+        </div>
+    </div>
+</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">JSON</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <pre><code>{{aaa}}</code></pre >
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>

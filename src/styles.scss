@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+@font-face {
+    font-family: 'Lato';
+    src: url(https://fonts.googleapis.com/css?family=Lato) format("truetype");
+    font-weight:300;
+  }
+
+  body{
+    font-family: 'Lato', sans-serif;
+   }
