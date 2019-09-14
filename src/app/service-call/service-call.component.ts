@@ -18,12 +18,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ServiceCallComponent implements OnInit {
 
-  public searchText : string;
-  hits$: any;
-
-  data;
-  filterData;
-  aaa;
+  public data: any;
+  public filterData: any;
+  public jsonData: String;
 
   constructor(private rest : RestService, private http: HttpClient,private modalService: NgbModal) {
    }
@@ -43,7 +40,7 @@ export class ServiceCallComponent implements OnInit {
   }
   openJsonModel(content, data) {
     debugger;
-    this.aaa = JSON.stringify(data, null, 4);
+    this.jsonData = JSON.stringify(data, null, 4);
     this.modalService.open(content, { size: 'lg' });
   }
 
